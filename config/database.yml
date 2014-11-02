@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  database: hollywood_development
+  pool: 5
+  timeout: 5000
+  password: 
+  host: localhost 
+  port: 5432
+
+test:
+  adapter: postgresql
+  database: hollywood_test
+  pool: 5
+  timeout: 5000
+  password: 
+  host: localhost 
+  port: 5432

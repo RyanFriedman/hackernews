@@ -1,0 +1,28 @@
+#nav {
+  background-color: #CCC; 
+  padding-left: 20px;
+  padding-right: 20px;	
+}
+
+#nav li {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+#nav a {
+  text-decoration: none;
+  color: black;
+}
+
+#nav li.active a {
+  color: white;
+}
+
+#nav li a.user {
+  color: blue;
+}
+
+.link {
+  font-size: 13px;
+  color: #828282;
+}

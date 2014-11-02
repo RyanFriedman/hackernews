@@ -1,0 +1,6 @@
+<li>
+  <%= link_to(post.title, "http://#{post.url}") %> (<%= link_to URI(post.url).host, post.url, :class => "link" %>)<br />
+  <%= pluralize(post.votes_count, "point") %> by <%= link_to post.user.username, user_path(post.user) %> 
+  <%= time_ago_in_words(post.created_at) %> ago | <%= link_to "flag", root_path%> | 
+  <%= link_to "#{post.comments_count} comments", post_path(post) %>
+</li>
