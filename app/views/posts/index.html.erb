@@ -1,7 +1,10 @@
 <h3><%= @title %></h3>
+<p><%= @description if @description %></p>
+
 <ol>
-  <% @posts.all.each do |post| %>
-	<%= render :partial => "post", locals: { post: post } %>
+  <% @posts.each_with_index do |post| %>
+    <%= render :partial => "post", locals: { post: post } %>
   <% end %>
-<ol>
+</ol>
+
 <%= will_paginate @posts %>

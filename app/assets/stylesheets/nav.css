@@ -1,12 +1,11 @@
 #nav {
   background-color: #CCC; 
-  padding-left: 20px;
-  padding-right: 20px;	
+  padding: 5px 20px;	
 }
 
 #nav li {
   display: inline-block;
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 #nav a {
@@ -22,7 +21,6 @@
   color: blue;
 }
 
-.link {
-  font-size: 13px;
-  color: #828282;
+#nav li a.logo {
+  font-weight: bold;
 }

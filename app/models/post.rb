@@ -8,6 +8,7 @@ class Post < ActiveRecord::Base
   
   POST_TYPES = ['ask', 'show', 'default']
   validates :post_type, :presence => true, :inclusion => { :in => POST_TYPES }
+  validates :url, :presence => true, :url => true, :allow_blank => true, :uniqueness => true
   
   # Hacker News popularity algorithm, popularity based on function of time
   def self.popular

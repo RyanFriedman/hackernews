@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   get 'ask' => "posts#ask"
   get 'submit' => "posts#submit"
   
-  resources :users, :only => :show
-  resources :posts, :only => [:create, :show]
+  resources :users, :only => [:show, :edit, :update]
+  resources :posts, :only => [:create, :show, :destroy]
+  resources :votes, :only => :create
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

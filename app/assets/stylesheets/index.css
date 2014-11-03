@@ -1,5 +1,45 @@
+html {
+  font-family: Verdana, Geneva, sans-serif;
+}
 .container {
   margin: auto;
   display: block; 
   width: 90%;
+  background-color: #f6f6ef;
+}
+.post {
+  margin-top: 4px;
+}
+a.post-title {
+  font-size: 15px;
+  text-decoration: none;	
+  color: #000;
+  line-height: 5px;
+}
+a.post-title:visited {
+  color: #828282;
+  text-decoration: none;
+}
+.post-url, .post-link, 
+.post-data, .post-data a {
+  color: #828282;
+  text-decoration: none;
+  font-size: 11px;
+  line-height: 0.5;
+  padding: 0px;
+  margin: 0px;
+}
+.post-data {
+  margin-left: 20px;
+}
+.post-data a.delete {
+  color: red;
+}
+.votearrow {
+  display: inline-block;
+  background-size: 15px;
+  width: 15px;
+  height: 15px;
+  border: 0px;
+  background: url("grayarrow@2x.gif") no-repeat;
 }

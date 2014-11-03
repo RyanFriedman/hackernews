@@ -14,6 +14,10 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :votes
   
+  def voted_on_post?(post)
+    Vote.where(:user_id => self.id, :voteable_type => "Post", :voteable_id => post.id).count > 0
+  end
+  
   # Devise override for allowing users to sign in with username or email
   # https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
   def self.find_for_database_authentication(warden_conditions)
@@ -23,6 +27,10 @@ class User < ActiveRecord::Base
     else
       where(conditions).first
     end
+  end
+  
+  def admin?
+    self.admin == true
   end
   
   def email_required?

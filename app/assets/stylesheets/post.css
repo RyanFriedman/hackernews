@@ -1,0 +1,12 @@
+.new-post-table tr, .new-post-table td {
+  margin: 0px;
+  padding: 0px;
+}
+
+.post-text textarea {
+  width: 400px;
+  height: 150px;
+}
+.post-text td:first-child {
+  vertical-align: middle;
+}

@@ -1,6 +1,9 @@
 require 'will_paginate/array' 
 require "uri"
 class PostsController < ApplicationController
+  
+  before_action :set_post, only: [:show, :destroy]
+  
   def index
     @posts = Post.popular.paginate(:page => params[:page], :per_page => 30)
   end
@@ -19,7 +22,8 @@ class PostsController < ApplicationController
   
   def showoff
     @posts = Post.where(:post_type => "show").order("created_at DESC").paginate(:page => params[:page], :per_page => 30)
-    @title = "Show PR"
+    @title = "Show Projection Room"
+    @description = "Show PR is for sharing your work. Please read the guidelines. The newest Show PRs are here."
     render :template => "posts/index.html"
   end
   
@@ -33,14 +37,29 @@ class PostsController < ApplicationController
   
   def create
     @post = current_user.posts.build(post_params)
-    if @post.save!
-      redirect_to @post
-    else 
-      render :submit
+    respond_to do |format|
+      if @post.save
+       format.html {  redirect_to @post }
+       format.js {}
+      else 
+       format.html { render action: "submit", status: :unprocessable_entity }        
+      end
     end
   end
   
+  def destroy
+    @post
+    @post.destroy if current_user.admin? 
+    current_user.posts.find(@post).destroy
+    redirect_to :back
+  end
+  
   private
+  
+    def set_post
+      @post = Post.find(params[:id])
+    end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :text, :url)

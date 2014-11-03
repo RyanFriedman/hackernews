@@ -1,6 +1,16 @@
-<li>
-  <%= link_to(post.title, "http://#{post.url}") %> (<%= link_to URI(post.url).host, post.url, :class => "link" %>)<br />
-  <%= pluralize(post.votes_count, "point") %> by <%= link_to post.user.username, user_path(post.user) %> 
-  <%= time_ago_in_words(post.created_at) %> ago | <%= link_to "flag", root_path%> | 
-  <%= link_to "#{post.comments_count} comments", post_path(post) %>
+<li class="post">
+  <%= render :partial => "arrow", :locals => { post: post } %>	
+  <div style="display: inline;">
+    <%= link_to(post.title, "http://#{post.url}", :class => "post-title") %>
+	<%= link_to("(#{URI(post.url)})", "http://#{post.url}", :class => "post-url") %><br />
+	<span class="post-data">
+	  <%= pluralize(post.votes_count, "point") %> by <%= link_to post.user.username, user_path(post.user) %> 
+	  <%= time_ago_in_words(post.created_at) %> ago | <%= link_to "flag", root_path%> | 
+	  <%= link_to "#{post.comments_count} comments", post_path(post) %>
+	
+	  <% if current_user && current_user.admin || current_user == post.user %>
+		<%= link_to "delete", post_path(post), :method => "delete", :class => "delete" %>
+	  <% end %>
+	</span>
+  </div>
 </li>
