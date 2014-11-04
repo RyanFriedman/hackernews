@@ -5,14 +5,16 @@
   </div>
   <span class="post-data" style="margin-left: 0px !important">
     <%= link_to comment.user.username, user_path(comment.user) %> 
-    <%= time_ago_in_words(comment.created_at) %> ago | <%= link_to "flag", root_path%> | 
+    <%= time_ago_in_words(comment.created_at) %> ago | <%= link_to "flag", root_path%>
     <% if current_user && current_user.admin || current_user == comment.user %>
-	  <%= link_to "delete", comment_path(comment), :method => "delete", :confirm => :true, :class => "delete" %>
+	  | <%= link_to "delete", comment_path(comment), :method => "delete", :confirm => :true, :class => "delete" %>
     <% end %>
   </span>
   <div class="comment-text">
     <p><%= comment.text %></p>
-    <%= link_to "reply", comment_path(comment), :class => "reply" %>
+    <% if current_user %>
+      <%= link_to "reply", comment_path(comment), :class => "reply" %>
+    <% end %>
   </div>
 </div>
 <%= render :partial => "comments/children", :locals => { children: comment.children } %>

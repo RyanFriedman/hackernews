@@ -14,4 +14,12 @@ module ApplicationHelper
    def devise_mapping
      @devise_mapping ||= Devise.mappings[:user]
    end
+   
+   def strip_url_prefix(url)
+     URI(url).to_s
+            .gsub('http://www.',"")
+            .gsub('http://',"")
+            .gsub('https://www.',"")
+            .gsub('https://',"")
+   end
 end

@@ -52,7 +52,7 @@ class PostsController < ApplicationController
     @post
     @post.destroy if current_user.admin?
     current_user.posts.find(@post).destroy
-    redirect_to :index
+    redirect_to "index"
   end
   
   private

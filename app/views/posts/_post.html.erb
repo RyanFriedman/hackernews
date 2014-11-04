@@ -1,7 +1,10 @@
 <%= render :partial => "votes/upvote", :locals => { post: post } %>	
 <div style="display: inline;">
-   <%= link_to(post.title, "http://#{post.url}", :class => "post-title") %>
-   <%= link_to("(#{URI(post.url)})", "http://#{post.url}", :class => "post-url") %><br />
+  <%= link_to(post.title, "#{post.url}", :class => "post-title") %>
+  <% if post.url.length > 0 %>
+    <%= link_to("(#{strip_url_prefix(post.url)})", "#{post.url}", :class => "post-url") %>
+  <% end %>
+  <br />
   <span class="post-data">
     <%= pluralize(post.votes_count, "point") %> by <%= link_to post.user.username, user_path(post.user) %> 
     <%= time_ago_in_words(post.created_at) %> ago | <%= link_to "flag", root_path%> | 

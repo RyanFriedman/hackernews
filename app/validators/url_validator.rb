@@ -7,7 +7,7 @@ class UrlValidator < ActiveModel::EachValidator
       false
     end
     unless valid
-      record.errors[attribute] << (options[:message] || "is an invalid URL")
+      record.errors[attribute] << (options[:message] || "is an invalid URL, please add http:// or https:// before it")
     end
   end
  

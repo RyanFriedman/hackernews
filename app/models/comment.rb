@@ -2,7 +2,7 @@ class Comment < ActiveRecord::Base
   acts_as_tree
   belongs_to :user
   belongs_to :post, counter_cache: true
-  has_many :votes, dependent: :destroy
+  has_many :votes, as: :voteable, dependent: :destroy
   
   # Hacker News popularity algorithm, popularity based on function of time
   def self.popular

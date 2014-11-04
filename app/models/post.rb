@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   belongs_to :user
-  has_many :votes, dependent: :destroy
+  has_many :votes, as: :voteable, dependent: :destroy
   has_many :comments, dependent: :destroy
   
   before_save :categorize
@@ -8,8 +8,18 @@ class Post < ActiveRecord::Base
   
   POST_TYPES = ['ask', 'show', 'default']
   validates :post_type, :presence => true, :inclusion => { :in => POST_TYPES }
-  validates :url, :presence => true, :url => true, :allow_blank => true, :uniqueness => true
+  validates :url, :url => true, presence: true, if: :text_blank?
+  validates :title, presence: true
+  validates :text, presence: true, if: :url_blank?
   
+  def text_blank?
+    self.text.length == 0
+  end
+  
+  def url_blank?
+    self.url.length == 0
+  end
+
   # Hacker News popularity algorithm, popularity based on function of time
   def self.popular
     Post.select("posts.*, (((posts.votes_count) / POW(((EXTRACT(EPOCH FROM (now()-posts.created_at)) / 3600)::integer + 2), 1.5))) AS popularity")
