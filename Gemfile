@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'devise'
 gem 'will_paginate', '~> 3.0'
 gem 'pg'
+gem 'closure_tree'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'

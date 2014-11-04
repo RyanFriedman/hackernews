@@ -1,0 +1,5 @@
+<% children.each do |comment| %>
+  <div style="margin-left: 40px">
+    <%= render :partial => "comments/comment", :locals => { comment: comment } %>
+  </div>
+<% end %>

@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103180803) do
+ActiveRecord::Schema.define(version: 20141104052214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comment_hierarchies", id: false, force: true do |t|
+    t.integer "ancestor_id",   null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations",   null: false
+  end
+
+  add_index "comment_hierarchies", ["ancestor_id", "descendant_id", "generations"], name: "anc_desc_idx", unique: true, using: :btree
+  add_index "comment_hierarchies", ["descendant_id"], name: "desc_idx", using: :btree
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
@@ -23,6 +32,7 @@ ActiveRecord::Schema.define(version: 20141103180803) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "post_id"
+    t.integer  "parent_id"
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree

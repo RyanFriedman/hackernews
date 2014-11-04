@@ -33,6 +33,7 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
+    @comments = Comment.popular.where(:post_id => @post.id, :parent_id => nil)
   end
   
   def create
@@ -49,9 +50,9 @@ class PostsController < ApplicationController
   
   def destroy
     @post
-    @post.destroy if current_user.admin? 
+    @post.destroy if current_user.admin?
     current_user.posts.find(@post).destroy
-    redirect_to :back
+    redirect_to :index
   end
   
   private

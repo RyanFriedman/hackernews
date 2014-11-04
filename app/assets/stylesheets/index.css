@@ -35,6 +35,9 @@ a.post-title:visited {
 .post-data a.delete {
   color: red;
 }
+.post-data a:hover {
+  text-decoration: underline;
+}
 .votearrow {
   display: inline-block;
   background-size: 15px;
@@ -42,4 +45,24 @@ a.post-title:visited {
   height: 15px;
   border: 0px;
   background: url("grayarrow@2x.gif") no-repeat;
+}
+.rotate180 {
+  padding-left: 5px;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  filter: progid:DXImageTransform.Microsoft.Matrix(M11=-1, M12=0, M21=0, M22=-1, DX=0, DY=0, SizingMethod='auto expand');
+}
+
+ol {
+  color: #828282;
+}
+li.post {
+  margin-left: -10px;
+  padding-left: 0px;
+}
+.rotate180 {
+  
 }

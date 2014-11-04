@@ -1,3 +1,11 @@
-<%= @post.title %>
-<%= @post.url %>
+<%= render :partial => "posts/post", :locals => { post: @post } %>	
+
 <%= @post.text %>
+
+<%= form_for Comment.new, url: {controller: "comments", action: "create"}, html: {class: "comment-form"} do |f| %>
+  <%= f.hidden_field :post_id, :value => @post.id %>
+  <%= f.text_area :text, size: "60x12" %><br />
+  <%= f.submit "Add Comment" %>
+<% end %>
+
+<%= render :partial => "comments/comments" %>	

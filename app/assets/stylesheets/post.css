@@ -2,11 +2,16 @@
   margin: 0px;
   padding: 0px;
 }
-
 .post-text textarea {
   width: 400px;
   height: 150px;
 }
 .post-text td:first-child {
   vertical-align: middle;
+}
+.comment-form {
+  margin: 20px 0px 20px 20px;
+}
+.reply {
+  font-size: 11px;
 }

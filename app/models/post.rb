@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :user
-  has_many :votes
-  has_many :comments
+  has_many :votes, dependent: :destroy
+  has_many :comments, dependent: :destroy
   
   before_save :categorize
   after_create :add_karma

@@ -3,7 +3,7 @@
 
 <ol>
   <% @posts.each_with_index do |post| %>
-    <%= render :partial => "post", locals: { post: post } %>
+    <li class="post"><%= render :partial => "post", locals: { post: post } %></li>
   <% end %>
 </ol>
 

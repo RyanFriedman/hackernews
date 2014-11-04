@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
         
   attr_accessor :login
     
-  has_many :posts
-  has_many :comments
-  has_many :votes
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :votes, dependent: :destroy
   
   def voted_on_post?(post)
     Vote.where(:user_id => self.id, :voteable_type => "Post", :voteable_id => post.id).count > 0
