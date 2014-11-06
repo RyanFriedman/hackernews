@@ -1,4 +1,19 @@
-<h2>Sign up</h2>
+<h4>Login</h4>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div><label>Username</label><br />
+  <%= f.text_field :login, autofocus: true %></div>
+
+  <div><%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %></div>
+
+  <div><%= f.submit "Log in", :class => "entry" %></div>
+<% end %>
+
+<br />
+<%= link_to "Forgot password?", new_user_password_path(current_user), :class => "forgot-password" %>
+
+<h4>Create Account</h4>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -15,7 +30,5 @@
   <!--<div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div> -->
 
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.submit "Create Account", :class => "entry" %></div>
 <% end %>
-
-<%= render "devise/shared/links" %>

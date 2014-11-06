@@ -66,3 +66,12 @@ li.post {
 .rotate180 {
   
 }
+
+.entry {
+  margin-top: 20px;
+}
+
+.forgot-password {
+  padding-top: 10px;
+  font-size: 12px;
+}
