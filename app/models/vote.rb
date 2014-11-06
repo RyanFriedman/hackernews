@@ -10,12 +10,14 @@ class Vote < ActiveRecord::Base
   VOTE_TYPES = ['Up', 'Down']
   validates :vote_type, :presence => true, :inclusion => { :in => VOTE_TYPES }
     
-  # A user can earn karam when either a post or comment they
+  # A user can earn karma when either a post or comment they
   # submitted receives a vote.  Their karma is the cumulative
   # total of all their comments and posts votes.
   def increment_user_karma
+    # Keep users for voting for themselves
+    return if self.voteable.user == self.user 
     self.voteable.user.karma += 1
-    self.voteable.save!
+    self.voteable.user.save!
   end
   
   def update_vote_count
