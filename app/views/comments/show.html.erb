@@ -1,14 +1,18 @@
 <div style="margin-top: 10px">
-  <%= render :partial => "posts/arrow", :locals => { post: comment } %>
+  <div style="float:left">
+	<%= render :partial => "votes/upvote", :locals => { voteable: @comment, voteable_type: "Comment" } %></br>
+    <%= render :partial => "votes/downvote", :locals => { voteable: @comment, voteable_type: "Comment" } %>
+  </div>
   <span class="post-data">
-    <%= link_to comment.user.username, user_path(comment.user) %> 
-    <%= time_ago_in_words(comment.created_at) %> ago | <%= link_to "flag", root_path%> | 
-    <% if current_user && current_user.admin || current_user == comment.user %>
-	  <%= link_to "delete", comment_path(comment), :method => "delete", :confirm => :true, :class => "delete" %>
+    <%= link_to @comment.user.username, user_path(@comment.user) %> 
+    <%= time_ago_in_words(@comment.created_at) %> ago | <%= link_to "flag", root_path%>
+    <% if current_user && current_user.admin || current_user == @comment.user %>
+ 	  | 
+	  <%= link_to "delete", comment_path(@comment), :method => "delete", :confirm => :true, :class => "delete" %>
     <% end %>
   </span>
   <div class="comment-text">
-    <p><%= comment.text %></p>
+    <p><%= @comment.text %></p>
   </div>
 </div>
 
