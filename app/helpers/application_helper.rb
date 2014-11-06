@@ -1,3 +1,4 @@
+require('uri')
 module ApplicationHelper
   def active_link(current_page)
     return 'active' if request.original_fullpath.split('?').first == current_page
@@ -15,11 +16,32 @@ module ApplicationHelper
      @devise_mapping ||= Devise.mappings[:user]
    end
    
-   def strip_url_prefix(url)
-     URI(url).to_s
-            .gsub('http://www.',"")
-            .gsub('http://',"")
-            .gsub('https://www.',"")
-            .gsub('https://',"")
+   def display_host(url)
+     uri = URI::parse(url)
+     if uri.host && uri.scheme
+       uri.scheme = "generic"
+       puts uri.host
+       puts uri.host
+       puts uri.host
+       puts uri.host
+       puts uri.host
+       return uri.host
+     end
+     if uri.host
+       return uri.host
+     end
+     uri
+   end
+   
+   def host(url)
+     uri = URI::parse(url)
+     if uri.scheme.nil? && uri.host.nil?
+       unless uri.path.nil?
+         uri.scheme = "http"
+         uri.host = uri.path
+         uri.path = ""
+       end
+     end
+     uri
    end
 end

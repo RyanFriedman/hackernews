@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     respond_to do |format|
-      if @post.save
+      if @post.save!
        format.html { redirect_to :action => "newest" }
        format.js {}
       else 

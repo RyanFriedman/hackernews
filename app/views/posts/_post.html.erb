@@ -1,8 +1,8 @@
 <%= render :partial => "votes/upvote", :locals => { voteable: post, voteable_type: "Post" } %>	
 <div style="display: inline;">
   <% if post.url.length > 0 %>
-    <%= link_to(post.title, "#{post.url}", :class => "post-title") %>
-    <%= link_to("(#{strip_url_prefix(post.url)})", "#{post.url}", :class => "post-url") %>
+    <%= link_to(post.title, "#{host(post.url)}", :class => "post-title") %>
+    <%= link_to("(#{display_host(post.url)})", "#{host(post.url)}", :class => "post-url") %>
   <% else %>
 	<%= link_to(post.title, post_path(post), :class => "post-title") %>
   <% end %>

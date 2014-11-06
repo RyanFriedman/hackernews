@@ -9,4 +9,11 @@ class Comment < ActiveRecord::Base
     Comment.select("comments.*, (((comments.votes_count) / POW(((EXTRACT(EPOCH FROM (now()-comments.created_at)) / 3600)::integer + 2), 1.5))) AS popularity")
            .order("popularity DESC")
   end
+  
+  # Create one vote from the user that submitted the post.  This
+  # helps the popularity algorithm by giving the time variable
+  # a nonzero karma value to multiply against.
+  def add_karma
+    self.user.votes.build(:voteable_id => self.id, :voteable_type => "Post", :vote_type => "Up").save!
+  end
 end
