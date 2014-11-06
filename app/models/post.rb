@@ -65,6 +65,6 @@ class Post < ActiveRecord::Base
   # helps the popularity algorithm by giving the time variable
   # a nonzero karma value to multiply against.
   def add_karma
-    self.user.votes.build(:voteable_id => self.id, :voteable_type => "Post").save!
+    self.user.votes.build(:voteable_id => self.id, :voteable_type => "Post", :vote_type => "Up").save!
   end
 end

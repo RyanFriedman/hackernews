@@ -1,7 +1,7 @@
 <div style="margin-top: 10px">
   <div style="float:left">
-	<%= render :partial => "votes/upvote", :locals => { post: comment } %></br>
-    <%= render :partial => "votes/downvote", :locals => { post: comment } %>
+	<%= render :partial => "votes/upvote", :locals => { voteable: comment, voteable_type: "Comment" } %></br>
+    <%= render :partial => "votes/downvote", :locals => { voteable: comment, voteable_type: "Comment" } %>
   </div>
   <span class="post-data" style="margin-left: 0px !important">
     <%= link_to comment.user.username, user_path(comment.user) %> 

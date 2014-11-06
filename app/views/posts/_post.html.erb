@@ -1,4 +1,4 @@
-<%= render :partial => "votes/upvote", :locals => { post: post } %>	
+<%= render :partial => "votes/upvote", :locals => { voteable: post, voteable_type: "Post" } %>	
 <div style="display: inline;">
   <% if post.url.length > 0 %>
     <%= link_to(post.title, "#{post.url}", :class => "post-title") %>
@@ -14,7 +14,7 @@
 	
 	<% if user_signed_in? %>
       <% if current_user.admin == true || current_user == post.user %>
-	    <%= link_to "delete", post_path(post), :method => "delete", :confirm => :true, :class => "delete" %>
+	    <%= link_to "delete", post_path(post), { :method => "delete", :confirm => :true, data: { confirm: "Are you sure?"}, :class => "delete"} %>
       <% end %>
     <% end %>
   </span>

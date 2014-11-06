@@ -14,8 +14,8 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :votes, dependent: :destroy
   
-  def voted_on_post?(post)
-    Vote.where(:user_id => self.id, :voteable_type => "Post", :voteable_id => post.id).count > 0
+  def voted_on_object?(voteable, voteable_type)
+    Vote.where(:user_id => self.id, :voteable_type => voteable_type, :voteable_id => voteable.id).count > 0
   end
   
   # Devise override for allowing users to sign in with username or email
