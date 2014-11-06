@@ -11,13 +11,14 @@
     <td>karma:</td>
 	<td><%= @user.karma %></td>
   </tr>
-<% if current_user.id == params[:id].to_i %>
-  <%= render :partial => "users/edit" %>
-<% else %>
-  <tr>
-    <td>about:</td>	
-	<td><%= @user.about %></td>
-  </tr>
-<% end %>
-
+  <% if user_signed_in? %>
+    <% if current_user.id == params[:id].to_i %> 
+      <%= render :partial => "users/edit" %>
+	<% end %>
+  <% else %>
+    <tr>
+      <td>about:</td>	
+	  <td><%= @user.about %></td>
+    </tr>
+  <% end %>
 </table>
