@@ -1,6 +1,8 @@
 <%= render :partial => "posts/post", :locals => { post: @post } %>	
-
-<%= @post.text %>
+<br />
+<div style="margin-left: 20px; margin-top: 20px">
+  <%= @post.text %>
+</div>
 
 <%= form_for Comment.new, url: {controller: "comments", action: "create"}, html: {class: "comment-form"} do |f| %>
   <%= f.hidden_field :post_id, :value => @post.id %>

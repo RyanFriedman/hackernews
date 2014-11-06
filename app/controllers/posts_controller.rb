@@ -40,7 +40,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     respond_to do |format|
       if @post.save
-       format.html {  redirect_to @post }
+       format.html { redirect_to :action => "newest" }
        format.js {}
       else 
        format.html { render action: "submit", status: :unprocessable_entity }        
@@ -50,9 +50,13 @@ class PostsController < ApplicationController
   
   def destroy
     @post
-    @post.destroy if current_user.admin?
-    current_user.posts.find(@post).destroy
-    redirect_to "index"
+    if current_user.admin?
+      @post.destroy 
+      redirect_to :action => "index"
+    else
+      current_user.posts.find(@post).destroy
+      redirect_to :action => "index"
+    end
   end
   
   private

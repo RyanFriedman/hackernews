@@ -10,7 +10,7 @@
     <%= time_ago_in_words(post.created_at) %> ago | <%= link_to "flag", root_path%> | 
     <%= link_to "#{post.comments_count} comments", post_path(post) %>
 
-    <% if current_user && current_user.admin || current_user == post.user %>
+    <% if (current_user && current_user.admin == true) || current_user == post.user %>
 	  <%= link_to "delete", post_path(post), :method => "delete", :confirm => :true, :class => "delete" %>
     <% end %>
   </span>
