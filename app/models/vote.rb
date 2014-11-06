@@ -21,6 +21,14 @@ class Vote < ActiveRecord::Base
   def update_vote_count
     case self.vote_type
     when "Up"
+      puts self
+      puts self
+      puts self
+      puts self
+      puts self.voteable.to_s
+      puts self.voteable.to_s
+      puts self.voteable.to_s
+      puts self.voteable.to_s
       self.voteable.votes_count += 1
       self.voteable.save!  
     when "Down"
