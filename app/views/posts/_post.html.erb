@@ -1,17 +1,21 @@
 <%= render :partial => "votes/upvote", :locals => { post: post } %>	
 <div style="display: inline;">
-  <%= link_to(post.title, "#{post.url}", :class => "post-title") %>
   <% if post.url.length > 0 %>
+    <%= link_to(post.title, "#{post.url}", :class => "post-title") %>
     <%= link_to("(#{strip_url_prefix(post.url)})", "#{post.url}", :class => "post-url") %>
+  <% else %>
+	<%= link_to(post.title, post_path(post), :class => "post-title") %>
   <% end %>
   <br />
   <span class="post-data">
     <%= pluralize(post.votes_count, "point") %> by <%= link_to post.user.username, user_path(post.user) %> 
     <%= time_ago_in_words(post.created_at) %> ago | <%= link_to "flag", root_path%> | 
     <%= link_to "#{post.comments_count} comments", post_path(post) %>
-
-    <% if (current_user && current_user.admin == true) || current_user == post.user %>
-	  <%= link_to "delete", post_path(post), :method => "delete", :confirm => :true, :class => "delete" %>
+	
+	<% if user_signed_in? %>
+      <% if current_user.admin == true || current_user == post.user %>
+	    <%= link_to "delete", post_path(post), :method => "delete", :confirm => :true, :class => "delete" %>
+      <% end %>
     <% end %>
   </span>
 </div>

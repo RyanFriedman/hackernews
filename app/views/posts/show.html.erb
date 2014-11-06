@@ -1,7 +1,9 @@
 <%= render :partial => "posts/post", :locals => { post: @post } %>	
 <br />
 <div style="margin-left: 20px; margin-top: 20px">
-  <%= @post.text %>
+  <p style="color: #828282; font-size: 13px">
+    <%= @post.text %>
+  </p>
 </div>
 
 <%= form_for Comment.new, url: {controller: "comments", action: "create"}, html: {class: "comment-form"} do |f| %>
