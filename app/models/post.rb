@@ -40,15 +40,15 @@ class Post < ActiveRecord::Base
   end
   
   def is_show_pr?
-    self.find_post_type_from_string("show pr:")
+    self.find_post_type_from_string("show fh:")
   end
   
   def is_ask_pr?
-    self.find_post_type_from_string("ask pr:")
+    self.find_post_type_from_string("ask fh:")
   end
   
   def edit_post(type)
-    self.title = self.title.gsub("#{type} pr: ", "#{type.capitalize} PR: ") 
+    self.title = self.title.gsub("#{type} fh: ", "#{type.capitalize} FH: ") 
     self.post_type = type
   end
   
