@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.all.order("karma DESC"). limit(50)
+  end
+  
   def show
     @user = User.find(params[:id])
   end

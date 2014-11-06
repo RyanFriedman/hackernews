@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'show' => "posts#showoff"
   get 'ask' => "posts#ask"
   get 'submit' => "posts#submit"
+  get 'leaders' => "users#index"
   
   resources :users, :only => [:show, :edit, :update]
   resources :posts, :only => [:create, :show, :destroy]

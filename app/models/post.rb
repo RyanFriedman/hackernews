@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   
   before_save :categorize
-  after_create :add_karma
+  after_create :add_vote
   
   POST_TYPES = ['ask', 'show', 'default']
   validates :post_type, :presence => true, :inclusion => { :in => POST_TYPES }
@@ -64,7 +64,7 @@ class Post < ActiveRecord::Base
   # Create one vote from the user that submitted the post.  This
   # helps the popularity algorithm by giving the time variable
   # a nonzero karma value to multiply against.
-  def add_karma
+  def add_vote
     self.user.votes.build(:voteable_id => self.id, :voteable_type => "Post", :vote_type => "Up").save!
   end
 end

@@ -1,0 +1,15 @@
+<p>Users with the most karma</p>
+<table>
+  <tr>
+	<th></th>
+	<th></th>
+	<th>Total</th>
+  </tr>
+<% @users.each_with_index do |user, index| %>
+  <tr>
+	<td><%= index + 1 %>.</td>
+	<td><%= user.username %></td>
+	<td align="right"><%= user.karma %></td>
+  </tr>
+<% end %>
+</table>
