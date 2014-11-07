@@ -1,5 +1,7 @@
-<%= render :partial => "votes/upvote", :locals => { voteable: post, voteable_type: "Post" } %>	
-<div style="display: inline;">
+<div style="margin-left: 5px">
+  <%= render :partial => "votes/upvote", :locals => { voteable: post } %>	
+</div>
+<div style="margin-left: 39px;">
   <% if post.url.length > 0 %>
     <%= link_to(post.title, "#{host(post.url)}", :class => "post-title") %>
     <%= link_to("(#{display_host(post.url)})", "#{host(post.url)}", :class => "post-url") %>

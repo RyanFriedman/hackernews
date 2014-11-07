@@ -29,9 +29,6 @@ a.post-title:visited {
   padding: 0px;
   margin: 0px;
 }
-.post-data {
-  margin-left: 20px;
-}
 .post-data a.delete {
   color: red;
 }
@@ -40,8 +37,10 @@ a.post-title:visited {
 }
 .votearrow {
   display: inline-block;
-  background-size: 15px;
+  float:left;
+  background-size: 14px;
   width: 15px;
+  margin-left: 1px;
   height: 15px;
   border: 0px;
   background: url("grayarrow@2x.gif") no-repeat;
@@ -55,9 +54,9 @@ a.post-title:visited {
   transform: rotate(180deg);
   filter: progid:DXImageTransform.Microsoft.Matrix(M11=-1, M12=0, M21=0, M22=-1, DX=0, DY=0, SizingMethod='auto expand');
 }
-
-ol {
+ul {
   color: #828282;
+  list-style-type: none;
 }
 li.post {
   margin-left: -10px;
@@ -66,11 +65,9 @@ li.post {
 .rotate180 {
   
 }
-
 .entry {
   margin-top: 20px;
 }
-
 .forgot-password {
   padding-top: 10px;
   font-size: 12px;
