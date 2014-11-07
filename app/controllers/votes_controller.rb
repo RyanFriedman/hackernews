@@ -1,4 +1,5 @@
 class VotesController < ApplicationController
+  before_filter :authenticate_user!, only: :create
   
   def create
     vote = current_user.votes.build(vote_params).save!

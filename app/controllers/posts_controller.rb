@@ -1,8 +1,8 @@
 require 'will_paginate/array' 
 require "uri"
 class PostsController < ApplicationController
-  
   before_action :set_post, only: [:show, :destroy]
+  before_filter :authenticate_user!, only: :create
   
   def index
     @posts = Post.popular.paginate(:page => params[:page], :per_page => 30)
@@ -16,14 +16,15 @@ class PostsController < ApplicationController
   
   def ask
     @posts = Post.where(:post_type => "ask").order("created_at DESC").paginate(:page => params[:page], :per_page => 30)
-    @title = "Ask PR"
+    @title = "Ask FH"
+    @description = "Ask FH is for asking the community questions. Please read the guidelines."
     render :template => "posts/index.html"
   end
   
   def showoff
     @posts = Post.where(:post_type => "show").order("created_at DESC").paginate(:page => params[:page], :per_page => 30)
-    @title = "Show Projection Room"
-    @description = "Show PR is for sharing your work. Please read the guidelines. The newest Show PRs are here."
+    @title = "Show FH"
+    @description = "Show FH is for sharing your work. Please read the guidelines."
     render :template => "posts/index.html"
   end
   
