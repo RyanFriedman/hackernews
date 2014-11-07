@@ -1,25 +1,30 @@
 html {
   font-family: Verdana, Geneva, sans-serif;
 }
+
 .container {
   margin: auto;
   display: block; 
   width: 90%;
   background-color: #f6f6ef;
 }
+
 .post {
-  margin-top: 4px;
+  margin-top: 12px;
 }
+
 a.post-title {
   font-size: 15px;
   text-decoration: none;	
   color: #000;
   line-height: 5px;
 }
+
 a.post-title:visited {
   color: #828282;
   text-decoration: none;
 }
+
 .post-url, .post-link, 
 .post-data, .post-data a {
   color: #828282;
@@ -29,12 +34,20 @@ a.post-title:visited {
   padding: 0px;
   margin: 0px;
 }
+
+.post-data {
+  display: block;
+  margin-top: 5px;
+}
+
 .post-data a.delete {
   color: red;
 }
+
 .post-data a:hover {
   text-decoration: underline;
 }
+
 .votearrow {
   display: inline-block;
   float:left;

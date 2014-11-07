@@ -5,12 +5,13 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= render :partial => "layouts/is_mobile" %>
   <%= render :partial => "layouts/google_analytics" %>
 </head>
 <body>
   <div class="container">
     <%= render 'partials/nav' %>
- 	<div style="padding:0 10px">
+ 	<div style="padding-bottom:10px">
 	  <%= yield %>
 	</div>
   </div>

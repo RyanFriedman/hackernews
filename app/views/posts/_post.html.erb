@@ -8,7 +8,6 @@
   <% else %>
 	<%= link_to(post.title, post_path(post), :class => "post-title") %>
   <% end %>
-  <br />
   <span class="post-data">
     <%= pluralize(post.votes_count, "point") %> by <%= link_to post.user.username, user_path(post.user) %> 
     <%= time_ago_in_words(post.created_at) %> ago | <%= link_to "flag", root_path%> | 
