@@ -3,7 +3,7 @@
   <%= link_to "", new_user_registration_path, :class => "votearrow" %>
 <% else %>
   <% if current_user.voted_on_object?(voteable, voteable.class.to_s) || voteable.user == current_user %>
-    <div id="arrow" style="display: inline-block;width: 15px"></div>
+    <div id="arrow" style="float: left; display: inline-block;width: 15px"></div>
   <% else %>
 	<%= link_to "", votes_path(:vote => { :voteable_type =>  voteable.class.to_s, :voteable_id => voteable.id, :vote_type => "Up" } ), method: :post, :class => "votearrow" %>
   <% end %>
