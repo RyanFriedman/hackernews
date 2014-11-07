@@ -1,5 +1,6 @@
 class Vote < ActiveRecord::Base
   belongs_to :voteable, polymorphic: true
+  belongs_to :user
   
   after_create :increment_user_karma
   after_create :update_vote_count
