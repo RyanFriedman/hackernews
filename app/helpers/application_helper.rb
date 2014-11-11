@@ -20,11 +20,6 @@ module ApplicationHelper
      uri = URI::parse(url)
      if uri.host && uri.scheme
        uri.scheme = "generic"
-       puts uri.host
-       puts uri.host
-       puts uri.host
-       puts uri.host
-       puts uri.host
        return uri.host
      end
      if uri.host
