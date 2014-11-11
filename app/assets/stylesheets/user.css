@@ -4,7 +4,13 @@ td {
   vertical-align: top;
   color: #828282;
 }
+
 textarea {
   width: 550px; 
   height: 150px;
+}
+
+.no-text-decoration {
+  text-decoration: none;
+  color: black;
 }

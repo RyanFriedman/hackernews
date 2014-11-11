@@ -8,7 +8,7 @@
 <% @users.each_with_index do |user, index| %>
   <tr>
 	<td><%= index + 1 %>.</td>
-	<td><%= user.username %></td>
+	<td><%= link_to(user.username, user_path(user), :class => "no-text-decoration" ) %></td>
 	<td align="right"><%= user.karma %></td>
   </tr>
 <% end %>
