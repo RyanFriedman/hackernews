@@ -62,8 +62,8 @@ class Post < ActiveRecord::Base
   end
   
   # Create one vote from the user that submitted the post.  This
-  # helps the popularity algorithm by giving the time variable
-  # a nonzero karma value to multiply against.
+  # helps the popularity algorithm by giving the timestamp
+  # a nonzero karma integer to multiply against.
   def add_vote
     self.user.votes.build(:voteable_id => self.id, :voteable_type => "Post", :vote_type => "Up").save!
   end
