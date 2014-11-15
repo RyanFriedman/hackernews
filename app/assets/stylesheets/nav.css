@@ -1,3 +1,7 @@
+#outer-nav {
+  background-color: #30C18B; 
+}
+
 #nav {
   background-color: #30C18B; 
   padding: 5px 20px;	
@@ -10,7 +14,7 @@
 
 #nav a {
   text-decoration: none;
-  color: black;
+  color: #2C6567;
 }
 
 #nav li.active a {
@@ -23,4 +27,9 @@
 
 #nav li a.logo {
   font-weight: bold;
+}
+
+.logo {
+  height: 44px;
+  width: 150px;
 }
