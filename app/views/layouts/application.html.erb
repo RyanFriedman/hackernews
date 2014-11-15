@@ -7,13 +7,21 @@
   <%= csrf_meta_tags %>
   <%= render :partial => "layouts/is_mobile" %>
   <%= render :partial => "layouts/google_analytics" %>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <div class="container">
-    <%= render 'partials/nav' %>
- 	<div style="padding-bottom:10px">
-	  <%= yield %>
-	</div>
-  </div>
+   <%= render 'partials/nav' %>
+   <div style="background-color: #f6f6ef;">
+     <div style="padding-bottom:10px" class="container">
+       <%= yield %>
+     </div>
+   </div>
 </body>
 </html>

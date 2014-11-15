@@ -1,12 +1,10 @@
-html {
+html, body {
   font-family: Verdana, Geneva, sans-serif;
+  background-color: #f6f6ef;
 }
 
 .container {
   margin: auto;
-  display: block; 
-  width: 90%;
-  background-color: #f6f6ef;
 }
 
 .post {
