@@ -1,13 +1,15 @@
-<h3><%= @title %></h3>
-<p><%= @description if @description %></p>
+<div id="posts-container">
+  <h3><%= @title %></h3>
+  <p><%= @description if @description %></p>
 
-<ul>
+  <ul id="posts">
   <% @posts.each_with_index do |post, index| %>
     <li class="post">
 	  <div style="float:left"><%= index + 1 %>.</div>
 	  <%= render :partial => "post", locals: { post: post } %>
-	</li>
-  <% end %>
-</ul>
+    </li>
+    <% end %>
+  </ul>
 
-<%= will_paginate @posts %>
+  <%= will_paginate @posts %>
+</div>

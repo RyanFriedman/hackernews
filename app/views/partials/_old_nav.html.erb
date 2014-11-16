@@ -1,0 +1,24 @@
+<div id="outer-nav" style="margin: 0px; padding: 0px">
+  <ul id="nav" class="container">
+    <li style="margin-right: 40px"><%= link_to(root_path) do %>
+	 	  <%= image_tag("logo-final.png", :class => "logo") %>
+		<% end %>
+	</li>
+    <li class="<%= active_link('/newest') %>"><%= link_to "new", newest_path %></li>
+    <li>|</li>
+    <li class="<%= active_link('/show') %>"><%= link_to "show", show_path %></li>
+    <li>|</li>
+    <li class="<%= active_link('/ask') %>"><%= link_to "ask", ask_path %></li>
+    <li>|</li>
+    <li class="<%= active_link('/leaders') %>"><%= link_to "leaders", leaders_path %></li>
+    <% if user_signed_in? %>
+      <li>|</li>
+      <li class="<%= active_link('/submit') %>"><%= link_to "submit", submit_path %></li>
+      <li style="float:right"><%= link_to "logout", destroy_user_session_path, :method => :delete %></li>
+      <li style="float:right">|</li>
+      <li style="float:right"><%= link_to "#{current_user.username} (#{current_user.karma})", user_path(current_user), :class => "user" %></li>
+    <% else %>
+      <li style="float:right"><%= link_to "login", new_user_registration_path %></li>
+    <% end %>
+  </div>
+</div>

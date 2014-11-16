@@ -1,3 +1,16 @@
+.navbar-custom {
+  background-color: #30C18B !important;
+  color:#ffffff;
+  margin: 0px !important;
+  padding: 0px;
+  border: none !important;
+  border-radius: 0px !important;
+}
+
+.navbar-brand-custom {
+  padding: 5px 10px !important;
+}
+
 #outer-nav {
   background-color: #30C18B; 
 }
@@ -12,9 +25,9 @@
   padding-left: 5px;
 }
 
-#nav a {
+.nav li a {
   text-decoration: none;
-  color: #2C6567;
+  color: #2C6868 !important;
 }
 
 #nav li.active a {
@@ -30,6 +43,6 @@
 }
 
 .logo {
-  height: 44px;
+  height: 39px;
   width: 150px;
 }

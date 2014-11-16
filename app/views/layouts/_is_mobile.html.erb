@@ -10,7 +10,8 @@ any: function() { return (isMobile.Android() || isMobile.BlackBerry() || isMobil
 $(function($) {
   if (isMobile.any()) {
     $('.post').css('margin-top', '23px');
-    $('.post-data').css('margin-top', '12px')
+    $('.post-data').css('margin-top', '12px');
+    $('#posts').css('padding-left', '10px');
   }
 });
 </script>

@@ -1,6 +1,7 @@
 html, body {
   font-family: Verdana, Geneva, sans-serif;
-  background-color: #f6f6ef;
+  padding: 0px;
+  margin: 0px;
 }
 
 .container {
@@ -28,7 +29,6 @@ a.post-title:visited {
   color: #828282;
   text-decoration: none;
   font-size: 11px;
-  line-height: 0.5;
   padding: 0px;
   margin: 0px;
 }
@@ -79,7 +79,13 @@ li.post {
 .entry {
   margin-top: 20px;
 }
+
 .forgot-password {
   padding-top: 10px;
   font-size: 12px;
+}
+
+#posts-container {
+  background-color: #f6f6ef;
+  padding: 0px 0px 10px 0px;
 }
