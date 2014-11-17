@@ -1,0 +1,30 @@
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+  .post { margin-top: 20px; }
+  a.comments { margin-top: 10px; }
+  .post-data { margin-top: 5px; }
+  #posts { padding-left: 10px; }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+  .post { margin-top: 20px; }
+  a.comments { margin-top: 10px; }
+  .post-data { margin-top: 5px; }
+  #posts { padding-left: 10px; }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
