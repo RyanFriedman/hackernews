@@ -14,3 +14,15 @@ textarea {
   text-decoration: none;
   color: black;
 }
+
+.leaders-table td { 
+  padding: 0px 10px;
+}
+
+.user-table td { 
+  padding: 3px 10px;
+}
+
+.user-table { 
+  margin-top: 20px;
+}

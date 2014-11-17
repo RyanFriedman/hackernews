@@ -1,0 +1,21 @@
+<div style="margin-left: 5px">
+  <%= render :partial => "votes/upvote", :locals => { voteable: post } %>	
+</div>
+<div style="margin-left: 30px;">
+  <% if post.url.length > 0 %>
+    <%= link_to(post.title, "#{host(post.url)}", :class => "post-title") %>
+    <%= link_to("(#{display_host(post.url)})", "#{host(post.url)}", :class => "post-url") %>
+  <% else %>
+	<%= link_to(post.title, post_path(post), :class => "post-title") %>
+  <% end %>
+  <span class="post-data">
+    <%= pluralize(post.votes_count, "point") %> by <%= link_to post.user.username, user_path(post.user) %> 
+    <%= time_ago_in_words(post.created_at) %> ago
+	
+	<% if user_signed_in? %>
+      <% if current_user.admin == true || current_user == post.user %>
+	    <%= link_to "delete", post_path(post), { :method => "delete", :confirm => :true, data: { confirm: "Are you sure?"}, :class => "delete"} %>
+      <% end %>
+    <% end %>
+  </span>
+</div>

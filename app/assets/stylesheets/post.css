@@ -20,3 +20,11 @@ a.comments {
   font-size: 12px;
   font-weight: bold;
 }
+
+.new-post-table {
+  margin-top: 25px;
+}
+
+.new-post-table td {
+  padding: 5px;
+}

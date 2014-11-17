@@ -4,6 +4,9 @@
   a.comments { margin-top: 10px; }
   .post-data { margin-top: 5px; }
   #posts { padding-left: 10px; }
+  textarea { width: 90% !important; }
+  textarea#user_about { width: 90% !important; }
+  #user_email { width: 90% !important; }
 }
 
 /* Extra Small Devices, Phones */ 
@@ -12,11 +15,17 @@
   a.comments { margin-top: 10px; }
   .post-data { margin-top: 5px; }
   #posts { padding-left: 10px; }
+  textarea { width: 90% !important; }
+  #user_email { width: 90% !important; }
 }
 
 /* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
-
+@media only screen and (max-width : 768px) {
+  .post { margin-top: 20px; }
+  a.comments { margin-top: 10px; }
+  .post-data { margin-top: 5px; }
+  #posts { padding-left: 10px; }
+  textarea { width: 90% !important; }
 }
 
 /* Medium Devices, Desktops */

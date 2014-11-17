@@ -1,3 +1,4 @@
+<h4>Submit a Post</h4>
 <% if @post.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -11,7 +12,7 @@
 <% end %>
 
 <%= form_for @post, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
-  <table cellpadding="0" class="new-post-table">  
+  <table cellpadding="10" class="new-post-table">  
 	<tbody>
     <tr>
 	  <td>title</td>
