@@ -10,7 +10,7 @@
   <% end %>
   <span class="post-data">
     <%= pluralize(post.votes_count, "point") %> by <%= link_to post.user.username, user_path(post.user) %> 
-    <%= time_ago_in_words(post.created_at) %> ago | <%= link_to "flag", root_path%> | 
+    <%= time_ago_in_words(post.created_at) %> ago
     <%= link_to "#{pluralize(post.comments_count, "comment")}", post_path(post), :class => "comments" %>
 	
 	<% if user_signed_in? %>

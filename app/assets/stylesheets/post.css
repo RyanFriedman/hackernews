@@ -15,3 +15,8 @@
 .reply {
   font-size: 11px;
 }
+a.comments {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+}
