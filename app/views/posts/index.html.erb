@@ -1,4 +1,10 @@
 <div id="posts-container">
+  <% if current_page?(:action => 'index') && !user_signed_in? %>
+    <div class="alert alert-success fade in" style="margin-top:10px">
+      <!-- <button class="close" data-dismiss="alert">×</button> -->
+      <p style="font-weight:bold; text-align:center">FilmHatch is a place for filmmakers to share projects and discuss news from around the film industry.</p>
+    </div>
+  <% end %>
   <h3><%= @title %></h3>
   <p><%= @description if @description %></p>
 
