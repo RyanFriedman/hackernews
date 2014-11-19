@@ -1,16 +1,11 @@
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width : 320px) {
-  .post { margin-top: 20px; }
-  a.comments { margin-top: 10px; }
-  .post-data { margin-top: 5px; }
-  #posts { padding-left: 10px; }
-  textarea { width: 90% !important; }
-  textarea#user_about { width: 90% !important; }
-  #user_email { width: 90% !important; }
+
 }
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px) {
+  #site-description { margin-bottom: 30px; }
   .post { margin-top: 20px; }
   a.comments { margin-top: 10px; }
   .post-data { margin-top: 5px; }
