@@ -5,7 +5,6 @@
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px) {
-  #site-description { margin-bottom: 30px; }
   .post { margin-top: 20px; }
   a.comments { margin-top: 10px; }
   .post-data { margin-top: 5px; }

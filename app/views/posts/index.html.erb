@@ -19,15 +19,3 @@
 
   <%= will_paginate @posts %>
 </div>
-
-<% if current_page?(:action => 'index') && !user_signed_in? %>
-  <script>
-	$(document).ready(function() {
-	  var firstVoteArrow = $(".votearrow").first();
-	  firstVoteArrow.attr("data-toggle", "tooltip");
-	  firstVoteArrow.attr("data-placement", "top");
-	  firstVoteArrow.attr("title", "Click the arrows to upvote the posts you like");
-	  $('[data-toggle=tooltip]').tooltip('show');
-	});
-  </script> 
-<% end %>
