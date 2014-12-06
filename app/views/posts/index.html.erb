@@ -9,15 +9,12 @@
   <p><%= @description if @description %></p>
 
   <ul id="posts">
-  <% @posts.each_with_index do |post, index| %>
-    <li class="post">
-	  <div style="float:left"><%= index + 1 %>.</div>
-	  <%= render :partial => "post", locals: { post: post } %>
-    </li>
+    <% @posts.each_with_index do |post, index| %>
+      <li class="post">
+	    <div style="float:left"><%= index + 1 %>.</div>
+	    <%= render :partial => "post", locals: { post: post } %>
+      </li>
     <% end %>
+    <%= will_paginate @posts, :page_links => false, :previous_label => "", :next_label => 'Next'  %>
   </ul>
-
-  <div class="flickr_pagination">
-    <%= will_paginate @posts %>
-  </div>
 </div>
