@@ -1,18 +1,19 @@
 html, body {
   font-family: Verdana, Geneva, sans-serif;
   padding: 0px;
-  margin: 0px;
+  margin: 0px;  
   height: 100%;
 }
 
 #main-container {
-  height:100vh; 
   background-color: #f6f6ef;
   padding-bottom:10px;
+  height: 100%; 
 }
 
 .container {
-  margin: auto;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 
 .post {
@@ -93,7 +94,8 @@ li.post {
 
 #posts-container {
   background-color: #f6f6ef;
-  padding: 0px 0px 10px 0px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 #site-description {
