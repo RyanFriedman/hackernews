@@ -11,6 +11,14 @@
   #posts { padding-left: 10px; }
   textarea { width: 90% !important; }
   #user_email { width: 90% !important; }
+
+  .container>.navbar-header, .container-fluid>.navbar-header, .container>.navbar-collapse, .container-fluid>.navbar-collapse {
+    margin: 0px !important;
+  }
+
+  #submit-form-container {
+    padding: 0px 8px 0px 8px !important;
+  }
 }
 
 /* Small Devices, Tablets */

@@ -1,46 +1,50 @@
-<h4>Submit a Post</h4>
-<% if @post.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<div id="submit-form-container">
+  <div class="container">
+	<h4>Submit a Post</h4>
+	<% if @post.errors.any? %>
+	  <div id="error_explanation">
+	    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
  
-    <ul>
-    <% @post.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+	    <ul>
+	    <% @post.errors.full_messages.each do |msg| %>
+	      <li><%= msg %></li>
+	    <% end %>
+	    </ul>
+	  </div>
+	<% end %>
 
-<%= form_for @post, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
-  <table cellpadding="10" class="new-post-table">  
-	<tbody>
-    <tr>
-	  <td>title</td>
-	  <td><%= f.text_field :title, :size => 70 %></td>
-	</tr>
-	<tr>
-	  <td>url</td>
-	  <td><%= f.text_field :url, :size => 70 %></td>
-	</tr>
-	<tr>
-	  <td colspan="2">Please preface the title of all 'show' or 'ask' posts with "Show FH: " or "Ask FH: "</td>
-	</tr>
-	<tr>
-	  <td></td>
-	  <td><h3 style="padding: 0; margin: 0">or</h3></td>
-	</tr>
-	<tr class="post-text">
-      <td>text</td>
-  	  <td><%= f.text_area :text, size: "40x12" %></td>
-	</tr>
- 	<tr>
-	  <td></td>
-      <td><%= f.submit "Submit" %></td>
-	</tr>
-	<tr>
-	  <td></td>
-	  <td><p>Leave url blank to submit a question for discussion. If there is no url, the text (if any) will appear at the top of the thread.</p></td>
-	</tr>
-	</tbody>
-  </table>
-<% end %>
+	<%= form_for @post, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+	  <table cellpadding="10" class="new-post-table">  
+		<tbody>
+	    <tr>
+		  <td>title</td>
+		  <td><%= f.text_field :title, :size => 70 %></td>
+		</tr>
+		<tr>
+		  <td>url</td>
+		  <td><%= f.text_field :url, :size => 70 %></td>
+		</tr>
+		<tr>
+		  <td colspan="2">Please preface the title of all 'show' or 'ask' posts with "Show FH: " or "Ask FH: "</td>
+		</tr>
+		<tr>
+		  <td></td>
+		  <td><h3 style="padding: 0; margin: 0">or</h3></td>
+		</tr>
+		<tr class="post-text">
+	      <td>text</td>
+	  	  <td><%= f.text_area :text, size: "40x12" %></td>
+		</tr>
+	 	<tr>
+		  <td></td>
+	      <td><%= f.submit "Submit" %></td>
+		</tr>
+		<tr>
+		  <td></td>
+		  <td><p>Leave url blank to submit a question for discussion. If there is no url, the text (if any) will appear at the top of the thread.</p></td>
+		</tr>
+		</tbody>
+	  </table>
+	<% end %>
+  </div>
+</div>
