@@ -1,4 +1,4 @@
-<h2>Hacker News written in Rails</h2>
+# Hacker News written in Rails
 
 Features:
 
@@ -13,4 +13,6 @@ TODO:
 - Ranking of replies (right now they are just most recent first)
 - Better filtering of Show and Ask posts
 
-Code based on HN.  See live demo here <a href="http://www.filmhatch.com">FilmHatch.com</a>.
+Code based on HN.  See [live demo of this repo here].
+
+[live demo of this repo here]:http://www.filmhatch.com
