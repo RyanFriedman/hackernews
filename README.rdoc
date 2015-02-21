@@ -1,28 +1,16 @@
-== README
+<h2>Hacker News written in Rails</h2>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Features:
 
-Things you may want to cover:
+- Popularity algorithm on comments and posts based on HN algorithm
+- Nested comments, upvotes, karma
+- User account creations
+- Mobile friendly (based on Bootstrap)
+- Smart URL truncation
 
-* Ruby version
+TODO:
 
-* System dependencies
+- Ranking of replies (right now they are just most recent first)
+- Better filtering of Show and Ask posts
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Code based on HN.  See live demo here <a href="http://www.filmhatch.com">FilmHatch.com</a>.
